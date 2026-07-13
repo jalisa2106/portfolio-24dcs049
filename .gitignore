@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+instructions.md
+public/photo.jpeg
+resume-details.md

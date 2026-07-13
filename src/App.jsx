@@ -5,10 +5,10 @@ import Skills from './components/Skills';
 import Footer from './components/Footer';
 
 function App() {
-  // Define data to pass as props
+  // Define data to pass as props matching Practical 1 specifications
   const studentName = "Jalisa Malik";
-  const mySkills = ["React", "JavaScript", "HTML & CSS", "Node.js"];
-  const headerTheme = "#2c3e50"; // Dark blue theme
+  const mySkills = ["React", "Next.js", "TypeScript", "FastAPI", "MongoDB", "PostgreSQL"];
+  const headerTheme = "#00F0FF"; // Cyber Blue accent color
 
   return (
     <div>
