@@ -5,7 +5,7 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills'];
+      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 150; // offset for nav height
 
       for (const section of sections) {
@@ -36,24 +36,11 @@ const NavBar = () => {
       <div className="nav-container">
         <a href="#home" className="nav-logo">JM</a>
         <div className="nav-links">
-          <a
-            href="#home"
-            className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
-          >
-            About
-          </a>
-          <a
-            href="#skills"
-            className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}
-          >
-            Skills
-          </a>
+          <a href="#home" className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>Home</a>
+          <a href="#about" className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}>About</a>
+          <a href="#skills" className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}>Skills</a>
+          <a href="#projects" className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}>Projects</a>
+          <a href="#contact" className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}>Contact</a>
         </div>
       </div>
     </nav>

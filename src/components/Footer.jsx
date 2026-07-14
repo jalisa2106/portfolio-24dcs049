@@ -6,12 +6,15 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-info">
           <h3>Jalisa Malik</h3>
-          <p>Building ideas into digital reality.</p>
+          <p>AI & DS | FULL-STACK DEV</p>
+          <p style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
+            <a href="mailto:jalisamalik21@gmail.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', marginRight: '1rem', textDecoration: 'none' }}>Email</a>
+            <a href="https://github.com/jalisa2106" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', marginRight: '1rem', textDecoration: 'none' }}>GitHub</a>
+            <a href="https://www.linkedin.com/in/jalisa-malik/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', textDecoration: 'none' }}>LinkedIn</a>
+          </p>
         </div>
         <div className="footer-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#">Back to Top</a>
+          <a href="#home" style={{ color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.3s ease' }}>Back to Top</a>
         </div>
       </div>
       <div className="footer-bottom">

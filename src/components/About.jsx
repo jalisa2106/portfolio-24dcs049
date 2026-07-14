@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about-section" style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
       <div className="section-header">
         <h2>Developer Profile</h2>
         <div className="accent-line"></div>

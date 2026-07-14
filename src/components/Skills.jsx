@@ -33,7 +33,7 @@ const Skills = ({ skillList }) => {
   ];
 
   return (
-    <section id="skills" className="skills-section">
+    <section id="skills" className="skills-section" style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
       <div className="section-header">
         <h2>Technical Arsenal</h2>
         <div className="accent-line"></div>
@@ -50,7 +50,7 @@ const Skills = ({ skillList }) => {
                 {cat.description}
               </p>
             )}
-            
+
             {cat.bullets && (
               <ul style={{ paddingLeft: '1.25rem', marginTop: '0.5rem', marginBottom: '1.5rem', color: 'var(--text-muted)', fontSize: '0.82rem', lineHeight: '1.6' }}>
                 {cat.bullets.map((b, bIdx) => (

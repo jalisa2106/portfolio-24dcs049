@@ -1,8 +1,11 @@
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import About from './components/About';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
   // Define data to pass as props matching Practical 1 specifications
@@ -12,10 +15,18 @@ function App() {
 
   return (
     <div>
-      <Header name={studentName} themeColor={headerTheme} />
       <NavBar />
-      <About />
-      <Skills skillList={mySkills} />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Header name={studentName} themeColor={headerTheme} />
+            <About />
+            <Skills skillList={mySkills} />
+            <Projects />
+            <Contact />
+          </>
+        } />
+      </Routes>
       <Footer />
     </div>
   );
