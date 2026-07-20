@@ -1,8 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
 import NavBar from './components/NavBar';
-import About from './components/About';
-import Skills from './components/Skills';
+import Home from './components/Home';
 import Footer from './components/Footer';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -17,15 +15,9 @@ function App() {
     <div>
       <NavBar />
       <Routes>
-        <Route path="/" element={
-          <>
-            <Header name={studentName} themeColor={headerTheme} />
-            <About />
-            <Skills skillList={mySkills} />
-            <Projects />
-            <Contact />
-          </>
-        } />
+        <Route path="/" element={<Home studentName={studentName} headerTheme={headerTheme} mySkills={mySkills} />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </div>

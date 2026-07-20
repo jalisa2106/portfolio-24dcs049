@@ -1,46 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const NavBar = () => {
-  const [activeSection, setActiveSection] = useState('home');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 150; // offset for nav height
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    // Initial check
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const location = useLocation();
+  const path = location.pathname;
 
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <a href="#home" className="nav-logo">JM</a>
+        <Link to="/" className="nav-logo">JM</Link>
         <div className="nav-links">
-          <a href="#home" className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>Home</a>
-          <a href="#about" className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}>About</a>
-          <a href="#skills" className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}>Skills</a>
-          <a href="#projects" className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}>Projects</a>
-          <a href="#contact" className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}>Contact</a>
+          <Link to="/" className={`nav-link ${path === '/' ? 'active' : ''}`}>Home</Link>
+          <Link to="/projects" className={`nav-link ${path === '/projects' ? 'active' : ''}`}>Projects</Link>
+          <Link to="/contact" className={`nav-link ${path === '/contact' ? 'active' : ''}`}>Contact</Link>
         </div>
       </div>
     </nav>
