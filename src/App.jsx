@@ -1,12 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Home from './components/Home';
 import Footer from './components/Footer';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+
+// Practical 8: each page becomes its own chunk, downloaded only when the route is visited
+const Home = lazy(() => import('./components/Home'));
+const Projects = lazy(() => import('./components/Projects'));
+const Analytics = lazy(() => import('./components/Analytics'));
+const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
-  // Define data to pass as props matching Practical 1 specifications
   const studentName = "Jalisa Malik";
   const mySkills = ["React", "Next.js", "TypeScript", "FastAPI", "MongoDB", "PostgreSQL"];
   const headerTheme = "#00F0FF"; // Cyber Blue accent color
@@ -14,11 +17,21 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home studentName={studentName} headerTheme={headerTheme} mySkills={mySkills} />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <Suspense
+        fallback={
+          <div className="loading-state" style={{ paddingTop: '8rem', textAlign: 'center' }}>
+            <div className="spinner-large"></div>
+            <p>Loading page...</p>
+          </div>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<Home studentName={studentName} headerTheme={headerTheme} mySkills={mySkills} />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </div>
   );

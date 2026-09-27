@@ -594,3 +594,43 @@ body::before {
   color: var(--text-muted);
   font-size: 0.85rem;
 }
+
+/* Practical 8: Fallback & Loading States */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: monospace;
+  font-size: 1rem;
+  gap: 1rem;
+  padding: 3rem;
+}
+
+.spinner-large {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(0, 240, 255, 0.15);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 0.9s cubic-bezier(0.6, 0.2, 0.4, 0.8) infinite;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.error-banner {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.error-message-box {
+  background: rgba(255, 50, 50, 0.1);
+  border: 1px solid rgba(255, 80, 80, 0.4);
+  color: #ff6b6b;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.95rem;
+  box-shadow: 0 0 15px rgba(255, 50, 50, 0.15);
+}
